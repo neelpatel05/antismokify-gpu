@@ -14,16 +14,17 @@ The platform takes video as a input and converts it into number of frames. Each 
 
 The application is made using:
 <br>
-<img src="https://img.shields.io/static/v1.svg?label=&message=%20Flask%20&color=blue">
-<img src="https://img.shields.io/static/v1.svg?label=&message=%20PyMongo%20&color=blue">
-<img src="https://img.shields.io/static/v1.svg?label=&message=%20Keras%20&color=blue">
-<img src="https://img.shields.io/static/v1.svg?label=&message=%20TensorFlow%20&color=blue">
-<img src="https://img.shields.io/static/v1.svg?label=&message=%20Dlib%20(GPU)%20&color=blue">
-<img src="https://img.shields.io/static/v1.svg?label=&message=%20FFmpeg%20&color=blue">
-<img src="https://img.shields.io/static/v1.svg?label=&message=%20MongoDB%20&color=blue">
-<img src="https://img.shields.io/static/v1.svg?label=&message=%20Docker%20&color=blue">
-<br>
-This repository provides the Docker image of the web-app with GPU support using nvidia-docker.
+<a href="https://github.com/pallets/flask"><img src="https://img.shields.io/static/v1.svg?label=&message=%20Flask%20&color=blue" ></a>
+<a href="https://api.mongodb.com/python/current/"><img src="https://img.shields.io/static/v1.svg?label=&message=%20PyMongo%20&color=blue"></a>
+<a href="https://github.com/keras-team/keras"><img src="https://img.shields.io/static/v1.svg?label=&message=%20Keras%20&color=blue"></a>
+<a href="https://github.com/tensorflow/tensorflow"><img src="https://img.shields.io/static/v1.svg?label=&message=%20TensorFlow%20&color=blue"></a>
+<a href="https://github.com/davisking/dlib"><img src="https://img.shields.io/static/v1.svg?label=&message=%20Dlib%20(GPU)%20&color=blue"></a> 
+<a href="https://github.com/ageitgey/face_recognition"><img src="https://img.shields.io/static/v1.svg?label=&message=%20Face%20Recognition%20&color=blue"></a> 
+<a href="https://github.com/FFmpeg/FFmpeg"><img src="https://img.shields.io/static/v1.svg?label=&message=%20FFmpeg%20&color=blue"></a>
+<a href="https://github.com/mongodb"><img src="https://img.shields.io/static/v1.svg?label=&message=%20MongoDB%20&color=blue"></a>
+<a href="https://github.com/docker"><img src="https://img.shields.io/static/v1.svg?label=&message=%20Docker%20&color=blue"></a>
+<br><br>
+This repository provides the Docker image of Anti-Smokify with GPU support using nvidia-docker.
 
 
 ## Project Requirements
