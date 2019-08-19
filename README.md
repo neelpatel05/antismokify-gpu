@@ -2,6 +2,19 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+
+
+
+Anti-Smokify is a web-app which can detect cigarette smoking scenes from a video. 
+
+
+In countries like India, the media agencies have to comply to the certain rules which are imposed by the government. One such government regulation that these agencies must abide, is to show a disclaimer; “Smoking is Injurious to Health”, wherever a cigarette smoking scene is present in their media content. In order to show such disclaimer, the agencies need to invest a lot of time and labour to manually inspect and search for such scenes in the video. Given the recent advances in deep learning and availability of huge computing power, our aim is to develop an automated system which can process such large videos as input and show the relevant smoking scenes along with its timestamps so that the media agencies can directly use it to add the disclaimer in least time possible.
+
+The platform takes video as a input and converts it into number of frames. Each frame is analysed for detection of the person in the frame. If the person in present in the frame, it is further classified by using trained CNN model as smoking and non-smoking frame. The timestamp of the smoking frame is extracted and are stored in the database. After completion of video processing the stored timestamps are emailed to the user.
+
+The application is made using Flask, PyMongo, Keras, TensorFlow, Dlib(GPU), FFmpeg and MongoDB. This repository provides the Docker image of the web-app with GPU support using nvidia-docker.
+
+
 ## Project Requirements
 * Ubuntu 16.04/18.04, Debian Jessie/Stretch
 * Nvidia GPU
@@ -10,7 +23,7 @@
 * Install Docker on Ubuntu (v19.03): [Guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
 * Install Docker Compose on Ubuntu: [Guide](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04)
 * Install nvidia-docker (v2.0.3): [Guide](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md)
-* Now that the tough part is over, remaining setup is easy peasy.
+ <br><br> Now that the tough part is over, remaining setup is easy peasy.<br><br>
 * Download antismokify docker image: [Link](http://www.mediafire.com/file/dgzcjcmns3xshb4/antismokify.zip/file) <br>
 _The image is compressed to zip. Extract it to get tar file_
 * After extracting the zip file, load the tar image using:
