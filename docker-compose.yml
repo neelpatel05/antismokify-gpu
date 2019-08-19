@@ -1,0 +1,25 @@
+version: '2.3' 
+services:
+  web:
+    image: antismokify:gpu
+    runtime: nvidia
+    ports:
+      - 80:80
+    links:
+      - mongo
+    environment:
+      - IP=mongo
+      - EMAIL=$EMAIL_ID
+      - PASS=$PASSWORD
+      - FPS=1
+    command: ["python3","app.py"]
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    command:
+      mongod 
+    volumes:
+      - ./app:/data/db
+volumes: 
+  app:
