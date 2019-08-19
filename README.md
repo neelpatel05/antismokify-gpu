@@ -12,7 +12,18 @@ In countries like India, the media agencies have to comply to the certain rules 
 
 The platform takes video as a input and converts it into number of frames. Each frame is analysed for detection of the person in the frame. If the person in present in the frame, it is further classified by using trained CNN model as smoking and non-smoking frame. The timestamp of the smoking frame is extracted and are stored in the database. After completion of video processing the stored timestamps are emailed to the user.
 
-The application is made using Flask, PyMongo, Keras, TensorFlow, Dlib(GPU), FFmpeg and MongoDB. This repository provides the Docker image of the web-app with GPU support using nvidia-docker.
+The application is made using:
+<br>
+<img src="https://img.shields.io/static/v1.svg?label=&message=%20Flask%20&color=blue">
+<img src="https://img.shields.io/static/v1.svg?label=&message=%20PyMongo%20&color=blue">
+<img src="https://img.shields.io/static/v1.svg?label=&message=%20Keras%20&color=blue">
+<img src="https://img.shields.io/static/v1.svg?label=&message=%20TensorFlow%20&color=blue">
+<img src="https://img.shields.io/static/v1.svg?label=&message=%20Dlib%20(GPU)%20&color=blue">
+<img src="https://img.shields.io/static/v1.svg?label=&message=%20FFmpeg%20&color=blue">
+<img src="https://img.shields.io/static/v1.svg?label=&message=%20MongoDB%20&color=blue">
+<img src="https://img.shields.io/static/v1.svg?label=&message=%20Docker%20&color=blue">
+<br>
+This repository provides the Docker image of the web-app with GPU support using nvidia-docker.
 
 
 ## Project Requirements
