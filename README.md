@@ -17,7 +17,7 @@ _The image is compressed to zip. Extract it to get tar file_
   ```bash
   $ docker load < antismokify.tar.gz
   ```
-* Run _docker images_ command to ensure that image has been successfully loaded.
+* Run ```docker images``` command to ensure that image has been successfully loaded.
   ```bash
   $ docker images
   REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -30,7 +30,7 @@ _The image is compressed to zip. Extract it to get tar file_
   $ wget https://raw.githubusercontent.com/jaynilpatel/antismokify-gpu/master/docker-compose.yml
   ```
 * Open _docker-compose.yml_ in text editor and add your Gmail $EMAIL_ID and $PASSWORD. (Make sure to allow less secure apps from your Google Account Settings).
-* Now the final step. Run _docker-compose up_
+* Now the final step. Run ```docker-compose up```
   ```bash
   $ docker-compose up
   ```
