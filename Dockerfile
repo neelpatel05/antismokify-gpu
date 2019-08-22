@@ -1,5 +1,5 @@
   
-# This is a sample Dockerfile you can modify to deploy your own app based on face_recognition on the GPU
+# This is a Dockerfile used to build the enviornment for antismokify
 # In order to run Docker in the GPU you will need to install Nvidia-Docker: https://github.com/NVIDIA/nvidia-docker
 
 FROM nvidia/cuda:9.0-cudnn7-devel
