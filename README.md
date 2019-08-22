@@ -38,7 +38,7 @@ This repository provides the Docker image of Anti-Smokify with GPU support using
  <br><br> Now that the tough part is over, remaining setup is easy peasy.<br><br>
 * Download antismokify docker image: [Link](http://www.mediafire.com/file/dgzcjcmns3xshb4/antismokify.zip/file) <br>
 _The image is compressed to zip. Extract it to get tar file_
-* After extracting the zip file, load the tar image using:
+* After extracting the zip file, load the tar image using ```docker load``` command.
   ```bash
   $ docker load < antismokify.tar.gz
   ```
