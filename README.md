@@ -32,7 +32,7 @@ This repository provides the Docker image of Anti-Smokify with GPU support using
 * Nvidia GPU
 
 ## Project Setup
-* Install Docker on Ubuntu (v19.03): [Guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
+* Install Docker (v19.03) on Ubuntu: [Guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
 * Install Docker Compose on Ubuntu: [Guide](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04)
 * Install nvidia-docker (v2.0.3): [Guide](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md)
  <br><br> Now that the tough part is over, remaining setup is easy peasy.<br><br>
