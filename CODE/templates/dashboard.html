@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/favicon.ico" type="image/ico">
+    <link rel="revision" href="index.html" />
+    <title>Anti-Smokify | Smoking Detection In Movies</title>
+    <link rel="stylesheet" href="../static/css/style.css?pl8qzd" media="all" />
+    <link rel="stylesheet" href="../static/css/main2.css?pl8qzd" media="all" />
+        <link rel="stylesheet" href="../static/css/gallery1.css" media="all" />
+    <link rel="stylesheet" href="../static/css/gallery2.css" media="all" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+        crossorigin="anonymous">
+    <script src="../static/main1.js"></script>
+    <script src="../static/createjs-2015.11.26.min.js"></script>
+    <script src='../static/cdn.sweetalert2.js'></script>
+    <script src='../static/promise-polyfill.js'></script>
+    <script src="../static/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <style>
+        .text-wrap {
+            min-height: 700px;
+        }
+    </style>
+</head>
+<header id="header">
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="font-size: 25px;"><span class="fas fa-window-close"></span></span></a>
+        <a href="welcome" class="logout" onclick="" style="font-size: 23px;"><span class="fas fa-home"></span>&nbsp;Home</a>
+        <a href="javascript:void(0)" class="logout" onclick="logout()" style="font-size: 23px;"><span class="fas fa-sign-out-alt"></span>&nbsp;Logout</a>
+        <a href="javascript:void(0)" class="delete" onclick="deleteUser()" style="font-size: 23px">Delete Account</a>
+    </div>
+    <button class="openbtn" onclick="openNav()"></button>
+</header>
+<script>
+    var response = null;
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/dashboard",
+            success: function (result) {
+                console.log(result);
+                x1 = "<ol>";
+                for (var x = 0; x < result.data.length; x++) {
+                    var video_name = Object.keys(result.data[x])[0];
+                    x1 += "<li style='display:inline-flex'><h4>" + video_name + "</h4>&nbsp;&nbsp;<i style='font-size:14px;'><button class='viewScenesBtn' onclick='getScenes("+ x +")' data-toggle='modal' data-target='.bd-example-modal-lg'>View Scenes</button></i></li>";
+                    x1 += "<h6>&nbsp;&nbsp;&nbsp;Description:&nbsp;" + result.data[x].description + "</h6>";
+                    x1 += "<ul style='list-style-type: none'>";
+                    for (var y = 0; y < result.data[x][video_name].length; y++) {
+                        var starttime = result.data[x][video_name][y]['starttime'];
+                        var endtime = result.data[x][video_name][y]['endtime'];
+                        //console.log(starttime, endtime);
+                        
+                        x1 += "<li> Scene "+ (y+1) +":  "+ starttime +" to "+ endtime + "</li>";
+                    }
+                    x1 += "</ul><br>";
+                }
+                x1 += "</ol>";
+                document.getElementById("video_time").innerHTML = x1;
+                response = result;
+            }
+        });
+    });
+</script>
+
+<body class="node-type-paragraphs homepage-tpl" id="body">
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+        <div>`
+            <main role="main" role="article" class="homepage-main" id="main">
+                <section class="hero-section">
+                    <div class="cubes-background">
+                        <div class="container">
+                            <div class="text-wrap">
+                                <h3>Your History</h3><br>
+                                <div id="video_time">
+                                    <!-- <ol>
+                                        <li>
+                                            <h5>[[Video Name]]</h5>
+                                        </li>
+                                        <ul style="list-style-type: none">
+                                            <li> Scene 1: &nbsp;[[00:00:00]] to [[00:00:00]]</li>
+                                            <li> Scene 2: &nbsp;[[00:00:00]] to [[00:00:00]]</li>
+                                            <li> Scene 3: &nbsp;[[00:00:00]] to [[00:00:00]]</li>
+                                            <li> Scene 4: &nbsp;[[00:00:00]] to [[00:00:00]]</li>
+                                        </ul><br>
+                                        <li>
+                                            <h5>[[Video Name]]</h5>
+                                        </li>
+                                        <ul style="list-style-type: none">
+                                            <li> Scene 1: &nbsp;[[00:00:00]] to [[00:00:00]]</li>
+                                            <li> Scene 2: &nbsp;[[00:00:00]] to [[00:00:00]]</li>
+                                            <li> Scene 3: &nbsp;[[00:00:00]] to [[00:00:00]]</li>
+                                            <li> Scene 4: &nbsp;[[00:00:00]] to [[00:00:00]]</li>
+                                        </ul>
+                                    </ol> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">All Scenes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="margin-bottom: 200px;">
+                    <div class="container" id="container" style="margin-top:-250px;margin-bottom:100px;">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "350px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+
+    function logout() {
+        hostname = window.location.hostname
+        url = "http://"+hostname+"/welcome/logout"
+        window.location.replace(url)
+    }
+    var user_email_id = "[[user_email_id]]"
+
+    function getScenes(s) {
+        console.log(response.photos[s]);
+        x1 = ""
+        for (var x = 0; x < response.photos[s].length; x++) {
+            if (response.photos[s].length > 3) {
+                x1 +=
+                    '<div id="target"><div class="albums"><div class="albums-inner" style="margin-top:150px;margin-bottom:0px;"><div class="albums-tab" style="margin-bottom:0px;"><div class="albums-tab-thumb sim-anim-9">';
+            } else {
+                x1 +=
+                    '<div id="target"><div class="albums"><div class="albums-inner"><div class="albums-tab"><div class="albums-tab-thumb sim-anim-3">';
+            }
+            for (var y = 0; y < response.photos[s][x].length; y++) {
+                x1 += '<img src="' + response.photos[s][x][y] + '" class="all studio" />'
+            }
+            z = x + 1
+            x1 += '</div></div></div></div><div class="albums-tab-text" style="margin-top:0px;text-decoration: underline;text-decoration-style:dotted;">Scene: ' + z +  '</div></div>'
+
+        }
+        document.getElementById("container").innerHTML = x1
+    }
+</script>
+
+</html>
