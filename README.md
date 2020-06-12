@@ -36,11 +36,9 @@ This repository provides the Docker image of Anti-Smokify with GPU support using
 * Install Docker Compose on Ubuntu: [Guide](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04)
 * Install nvidia-docker (v2.0.3): [Guide](https://github.com/NVIDIA/nvidia-docker/blob/master/README.md)
  <br><br> Now that the tough part is over, remaining setup is easy peasy.<br><br>
-* Download antismokify docker image: [Link](http://www.mediafire.com/file/dgzcjcmns3xshb4/antismokify.zip/file) <br>
-_The image is compressed to zip. Extract it to get tar file_
-* After extracting the zip file, load the tar image using ```docker load``` command.
+* Pull the docker image from GitHub Docker Packages: [antismokify:gpu](https://github.com/neelpatel05/antismokify-gpu/packages/267436)
   ```bash
-  $ docker load < antismokify.tar.gz
+  $ docker pull docker.pkg.github.com/neelpatel05/antismokify-gpu/antismokify:gpu
   ```
 * Run ```docker images``` command to ensure that image has been successfully loaded.
   ```bash
@@ -60,6 +58,3 @@ _The image is compressed to zip. Extract it to get tar file_
   $ docker-compose up
   ```
 * If you do not have Mongodb docker image, it will automatically fetch it. 
-
- 
- 
