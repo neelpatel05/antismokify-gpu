@@ -57,4 +57,7 @@ This repository provides the Docker image of Anti-Smokify with GPU support using
   ```bash
   $ docker-compose up
   ```
-* If you do not have Mongodb docker image, it will automatically fetch it. 
+* If you do not have Mongodb docker image, it will automatically fetch it. <br>
+
+### Poster Presented
+![](./Anti-Smokify-Poster.jpg)
