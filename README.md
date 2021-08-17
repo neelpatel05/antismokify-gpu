@@ -38,7 +38,7 @@ This repository provides the Docker image of Anti-Smokify with GPU support using
  <br><br> Now that the tough part is over, remaining setup is easy peasy.<br><br>
 * Pull the docker image from GitHub Docker Packages: [antismokify:gpu](https://github.com/neelpatel05/antismokify-gpu/packages/267436)
   ```bash
-  $ docker pull docker.pkg.github.com/neelpatel05/antismokify-gpu/antismokify:gpu
+  $ docker pull ghcr.io/neelpatel05/antismokify-gpu/antismokify:gpu
   ```
 * Run ```docker images``` command to ensure that image has been successfully loaded.
   ```bash
